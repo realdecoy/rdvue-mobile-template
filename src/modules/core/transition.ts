@@ -1,0 +1,15 @@
+export enum Transition {
+    CURL = 'curl',
+    CURLUP = 'curlUp',
+    CURLDOWN = 'curlDown',
+    EXPLODE = 'explode',
+    FADE = 'fade',
+    FLIP = 'flip',
+    FLIPRIGHT = 'flipRight',
+    FLIPLEFT = 'flipLeft',
+    SLIDE = 'slide',
+    SLIDELEFT = 'slideLeft',
+    SLIDERIGHT = 'slideRight',
+    SLIDETOP = 'slideTop',
+    SLIDEBOTTOM = 'slideBottom',
+}
