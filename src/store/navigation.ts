@@ -2,13 +2,15 @@ import { Module, VuexModule, Mutation } from 'vuex-module-decorators';
 import { getMultiParamModule, MultiParamAction } from '@/modules/core';
 import store from './index';
 import { Route } from '@/modules/types';
+import { routes } from '@/config/route';
 
 const MODULE_NAME = 'Navigation';
+const HOME = 'Home';
 
 @Module({ namespaced: true, name: MODULE_NAME, dynamic: true, store })
 class Store extends VuexModule {
     private _routeHistory: Array<Route> = [];
-    private _currentRoute = {} as Route;
+    private _currentRoute = routes.filter(r => r.name === HOME)[0];
 
     // ------------------------------------------------------------------------
     // Getters
@@ -35,8 +37,10 @@ class Store extends VuexModule {
 
     @MultiParamAction()
     public removeRoute() {
-        this.removeLastRoute();
-        this.setCurrentRoute(this.routeHistory[this.routeHistory.length - 1]);
+        if(this._routeHistory.length > 1) {
+            this.removeLastRoute();
+            this.setCurrentRoute(this.routeHistory[this.routeHistory.length - 1]);
+        }
     }
 
     // ------------------------------------------------------------------------

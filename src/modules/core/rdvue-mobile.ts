@@ -1,4 +1,7 @@
 import { Vue } from 'vue-property-decorator';
+import { AndroidApplication } from 'tns-core-modules/application';
+import { isAndroid } from 'tns-core-modules/platform';
+import { Frame } from 'tns-core-modules/ui/frame';
 import { routes } from '@/config/route';
 import { Lookup, NavigationDetail } from '@/modules/types';
 import { Navigation as Router } from '@/store/navigation';
@@ -67,4 +70,19 @@ export class RDVueMobile extends Vue {
         const Page = require(`@/pages${path}`).default;
         (this as unknown as Lookup<(arg: unknown, options?: Partial<NavigationDetail>) => void>).$navigateTo(Page, options);
     }
+
+    mounted() {
+
+        let activity = (AndroidApplication as unknown as AndroidApplication).startActivity ||
+          (AndroidApplication as unknown as AndroidApplication).foregroundActivity ||
+          Frame.topmost().android.currentActivity ||
+          Frame.topmost().android.activity;
+
+        if(isAndroid && activity) {
+
+          activity.onBackPressed = () => {
+            this.navigateBack();
+          }
+        }
+      }
 }
