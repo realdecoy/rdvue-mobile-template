@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "name": "layout",
+  "description": "Generate a basic layout.",
+  "isNativescriptTemplate": true,
+  "arguments": [
+    {
+      "name": "layoutNameKebab",
+      "type": "string",
+      "description": "the name for the generated layout. (e.g. user-layout)"
+    },
+    {
+      "name": "layoutName",
+      "type": "string",
+      "description": "the name of the generated layout.",
+      "isPrivate": true
+    }
+  ],
+  "sourceDirectory": "./",
+  "installDirectory": "layouts",
+  "installWithinFolder": false,
+  "files": [
+    {
+      "source": "layout.vue",
+      "target": "${layoutNameKebab}.vue",
+      "content": [
+        {
+          "matchRegex": "__LAYOUT__",
+          "replace": "${serviceName}"
+        },
+        {
+            "matchRegex": "__LAYOUT__KEBAB__",
+            "replace": "${pageNameKebab}"
+        }
+      ]
+    }
+  ]
+}

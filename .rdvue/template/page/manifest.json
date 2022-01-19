@@ -2,7 +2,7 @@
   "version": 2,
   "name": "page",
   "description": "Generate a basic page.",
-  "mobile": true,
+  "isNativescriptTemplate": true,
   "arguments": [{
       "name": "pageNameKebab",
       "type": "string",
@@ -53,7 +53,7 @@
       }]
     }
   ],
-  "mobileRoutes": [
+  "routes": [
     "{ name: '__NAME__', path: '/__PATH__' },"
   ]
 }
