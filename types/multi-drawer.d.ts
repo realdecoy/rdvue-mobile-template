@@ -1,1 +1,0 @@
-declare module 'nativescript-vue-multi-drawer';

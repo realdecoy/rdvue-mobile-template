@@ -1,7 +1,6 @@
-# NativeScript
-hooks/
+# JS
 node_modules/
-platforms/
+
 
 # Logs
 logs
@@ -19,6 +18,21 @@ yarn-error.log*
 .project
 tmp/
 typings/
+
+# React-native
+.expo/
+dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# macOS
+.DS_Store
 
 # Visual Studio Code
 .vscode/*
