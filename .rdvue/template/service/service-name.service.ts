@@ -4,7 +4,6 @@ enum StatusCode {
   SERVER_ERROR = 500,
 }
 
-
 class __SERVICE__ {
   // --------------------------------------------------------------------------
   // [Private] Fields
@@ -24,15 +23,12 @@ class __SERVICE__ {
   // --------------------------------------------------------------------------
   // [Public] Methods
   // --------------------------------------------------------------------------
-  public async submitData(
-    payload: string,
-    payloadObject: {}
-  ): Promise<{}> {
+  public async submitData(payload: string, payloadObject: {}): Promise<{}> {
     const result = { success: false };
 
     try {
       const { statusCode, content }: HttpResponse = await Http.request({
-        url: `<endpoint-name>`,
+        url: "<endpoint-name>",
         method: "POST",
         headers: { "Content-Type": "application/json" },
         content: payload ?? JSON.stringify(payloadObject),

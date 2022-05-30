@@ -5,6 +5,6 @@ export default StyleSheet.create({
     display: "flex",
   },
   heading: {
-    fontWeight: 'bold',
-  }
+    fontWeight: "bold",
+  },
 });
