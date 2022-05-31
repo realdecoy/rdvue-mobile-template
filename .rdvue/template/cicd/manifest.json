@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "name": "cicd",
+  "description": "Generate a CICD workfloe.",
+  "arguments": [
+    {
+      "name": "scheme",
+      "type": "string",
+      "description": "The name of the Scheme for the iOS project"
+    },
+    {
+      "name": "bundleIdentifier",
+      "type": "string",
+      "description": "The name of the unique identifier that will used for deployment to the App & Google play Store (eg. com.company.app)"
+    }
+  ],
+  "sourceDirectory": "./",
+  "installDirectory": "./",
+  "files": [
+    {
+      "source": "bitrise.yml",
+      "target": "bitrise.yml",
+      "content": [
+        {
+          "matchRegex": "__PROJECT_SCHEME__",
+          "replace": "${scheme}"
+        },
+        {
+          "matchRegex": "__BUNDLE_IDENTIFIER__",
+          "replace": "${bundleIdentifier}"
+        }
+      ]
+    }
+  ]
+}

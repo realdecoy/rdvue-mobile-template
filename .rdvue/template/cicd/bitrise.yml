@@ -1,0 +1,94 @@
+---
+format_version: '11'
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+project_type: react-native
+workflows:
+  _ios-build-deploy:
+    description: |
+      Runs tests.
+
+      Next steps:
+      - Check out [Getting started with Expo apps](https://devcenter.bitrise.io/en/getting-started/getting-started-with-expo-apps.html).
+    steps:
+    - xcode-archive@4:
+        inputs:
+        - automatic_code_signing: api-key
+        - project_path: "$BITRISE_SOURCE_DIR/ios/__PROJECT_SCHEME__.xcworkspace"
+        - scheme: Perkopolis
+        - configuration: "$IOS_BUILD_CONFIGURATION"
+        - register_test_devices: 'yes'
+        - distribution_method: "$IOS_DISTRIBUTION_METHOD"
+    - deploy-to-bitrise-io@2:
+        is_always_run: false
+    before_run:
+    - _setup-project
+  _setup-project:
+    description: |
+      Runs tests.
+
+      Next steps:
+      - Check out [Getting started with Expo apps](https://devcenter.bitrise.io/en/getting-started/getting-started-with-expo-apps.html).
+    steps:
+    - activate-ssh-key@4: {}
+    - git-clone@6: {}
+    - npm@1:
+        inputs:
+        - command: install
+    - expo-detach@1:
+        inputs:
+        - expo_cli_verson: 5.3.2
+        - override_react_native_version: 0.64.3
+  _test: {}
+  app-store:
+    description: |
+      Runs tests.
+
+      Next steps:
+      - Check out [Getting started with Expo apps](https://devcenter.bitrise.io/en/getting-started/getting-started-with-expo-apps.html).
+    steps:
+    - deploy-to-itunesconnect-deliver@2:
+        inputs:
+        - bundle_id: __BUNDLE_IDENTIFIER__
+        - connection: api_key
+    - send-microsoft-teams-message@0:
+        inputs:
+        - webhook_url: "$TEAMS_INCOMING_WEBHOOK_URL"
+    before_run:
+    - _ios-build-deploy
+    envs:
+    - opts:
+        is_expand: false
+      IOS_DISTRIBUTION_METHOD: app-store
+    - opts:
+        is_expand: false
+      IOS_BUILD_CONFIGURATION: Release
+  qa-ios:
+    description: |
+      Runs tests.
+
+      Next steps:
+      - Check out [Getting started with Expo apps](https://devcenter.bitrise.io/en/getting-started/getting-started-with-expo-apps.html).
+    steps:
+    - send-microsoft-teams-message@0:
+        inputs:
+        - webhook_url: "$TEAMS_INCOMING_WEBHOOK_URL"
+    before_run:
+    - _ios-build-deploy
+    envs:
+    - opts:
+        is_expand: false
+      IOS_DISTRIBUTION_METHOD: development
+    - opts:
+        is_expand: false
+      IOS_BUILD_CONFIGURATION: Debug
+meta:
+  bitrise.io:
+    stack: osx-xcode-13.2.x
+app:
+  envs:
+  - opts:
+      is_expand: false
+    PLATFORM: all
+trigger_map:
+- tag: release/*
+  workflow: app-store
