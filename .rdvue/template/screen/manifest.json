@@ -30,16 +30,6 @@
       ]
     },
     {
-      "source": "screen.scss",
-      "target": "${screenNameKebab}.scss",
-      "content": [
-        {
-          "matchRegex": "__SCREEN__",
-          "replace": "${screenNameKebab}"
-        }
-      ]
-    },
-    {
       "source": "screen.styles.tsx",
       "target": "${screenNameKebab}.styles.tsx",
       "content": [
@@ -55,7 +45,7 @@
       "content": [
         {
           "matchRegex": "__SCREEN__",
-          "replace": "${screenNameKebab}"
+          "replace": "${screenNamePascal}Screen"
         }
       ]
     }
