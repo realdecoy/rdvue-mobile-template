@@ -45,7 +45,7 @@
       "content": [
         {
           "matchRegex": "__SCREEN__",
-          "replace": "${screenNamePascal}Screen"
+          "replace": "${screenNamePascal}"
         }
       ]
     }

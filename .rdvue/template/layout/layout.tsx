@@ -10,7 +10,7 @@ interface State {
   stateValue: string;
 }
 
-class __SCREEN__ extends React.Component<Props, State> {
+class __LAYOUT__ extends React.Component<Props, State> {
   // --------------------------------------------------------------------------
   // Constructer
   // --------------------------------------------------------------------------
@@ -37,11 +37,11 @@ class __SCREEN__ extends React.Component<Props, State> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.heading}>__SCREEN__ Screen</Text>
+        <Text style={styles.heading}>__LAYOUT__ Layout</Text>
         <Text>Value is {this.props.value}</Text>
       </View>
     );
   }
 }
 
-export default __SCREEN__;
+export default __LAYOUT__;
