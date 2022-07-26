@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "store",
-  "description": "Generate a basic Vuex Store module.",
+  "description": "Generate a basic Store module.",
   "arguments": [{
       "name": "storeModuleNameKebab",
       "type": "string",
@@ -17,10 +17,10 @@
   "sourceDirectory": "./",
   "installDirectory": "store",
   "files": [{
-    "source": "module.ts",
-    "target": "${storeModuleNameKebab}.ts",
+    "source": "catalog.context.tsx",
+    "target": "${storeModuleNameKebab}.tsx",
     "content": [{
-      "matchRegex": "__STORE_MODULE__",
+      "matchRegex": "__CONTEXT__",
       "replace": "${storeModuleName}"
     }]
   }]
