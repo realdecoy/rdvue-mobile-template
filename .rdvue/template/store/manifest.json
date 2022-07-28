@@ -18,7 +18,7 @@
   "installDirectory": "context",
   "files": [{
     "source": "catalog.context.tsx",
-    "target": "${storeModuleNameKebab}.tsx",
+    "target": "${storeModuleNameKebab}.context.tsx",
     "content": [{
       "matchRegex": "__CONTEXT__",
       "replace": "${storeModuleName}"
