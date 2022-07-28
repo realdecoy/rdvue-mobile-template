@@ -1,21 +1,21 @@
 {
   "version": 2,
-  "name": "store",
-  "description": "Generate a basic Store module.",
+  "name": "context",
+  "description": "Generate a basic Context module.",
   "arguments": [{
       "name": "storeModuleNameKebab",
       "type": "string",
-      "description": "The name in Kebab-case for the generated store module. (e.g. user-data)"
+      "description": "The name in Kebab-case for the generated context module. (e.g. user-data)"
     },
     {
       "name": "storeModuleName",
       "type": "string",
-      "description": "the name for the generated store module.",
+      "description": "the name for the generated context module.",
       "isPrivate": true
     }
   ],
   "sourceDirectory": "./",
-  "installDirectory": "store",
+  "installDirectory": "context",
   "files": [{
     "source": "catalog.context.tsx",
     "target": "${storeModuleNameKebab}.tsx",
