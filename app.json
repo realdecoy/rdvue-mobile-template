@@ -3,6 +3,7 @@
     "name": "__PROJECT_NAME__",
     "slug": "__PROJECT_NAME__",
     "version": "1.0.0",
+    "scheme": "__PROJECT_SCHEME__",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -18,9 +19,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "__BUNDLE_IDENTIFIER__",
+      "buildNumber": "1.0.0"
     },
     "android": {
+      "package": "__BUNDLE_IDENTIFIER__",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"

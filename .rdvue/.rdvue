@@ -1,1 +1,5 @@
-{"projectRoot":"/media/carl/Data/code/projects/realdecoy/__PROJECT_NAME__"}
+{
+  "projectRoot": "/media/carl/Data/code/projects/realdecoy/__PROJECT_NAME__",
+  "isMobile": true,
+  "cicd": "bitrise"
+}
