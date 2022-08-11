@@ -20,7 +20,7 @@
   "files": [
     {
       "source": "service-name.service.ts",
-      "target": "${serviceNameKebab}.service..ts",
+      "target": "${serviceNameKebab}.service.ts",
       "content": [
         {
           "matchRegex": "__SERVICE__",
