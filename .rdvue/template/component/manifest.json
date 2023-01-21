@@ -21,12 +21,7 @@
     {
       "source": "component.styles.tsx",
       "target": "${componentNameKebab}.styles.tsx",
-      "content": [
-        {
-          "matchRegex": "__COMPONENT__",
-          "replace": "${componentNamePascal}"
-        }
-      ]
+      "content": []
     },
     {
       "source": "component.tsx",
@@ -35,6 +30,10 @@
         {
           "matchRegex": "__COMPONENT__KEBAB__",
           "replace": "${componentNameKebab}"
+        },
+        {
+          "matchRegex": "__COMPONENT__",
+          "replace": "${componentNamePascal}"
         }
       ]
     }
