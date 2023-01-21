@@ -1,4 +1,4 @@
-import React from "react";
+import { Component } from "react";
 import { View, Text } from "react-native";
 import styles from "./__COMPONENT__KEBAB__.styles";
 
@@ -10,7 +10,7 @@ interface State {
   stateValue: string;
 }
 
-class __COMPONENT__ extends React.Component<Props, State> {
+class __COMPONENT__ extends Component<Props, State> {
   // --------------------------------------------------------------------------
   // Constructer
   // --------------------------------------------------------------------------
