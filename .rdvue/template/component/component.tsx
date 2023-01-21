@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-import styles from "./__COMPONENT__.styles";
+import styles from "./__COMPONENT__KEBAB__.styles";
 
 interface Props {
   value: string;
@@ -44,4 +44,4 @@ class __COMPONENT__ extends React.Component<Props, State> {
   }
 }
 
-export default __COMPONENT__;
+export { __COMPONENT__ };

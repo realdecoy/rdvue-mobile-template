@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "component",
-  "description": "Generate a basic component.",
+  "description": "Generate a basic class based component.",
   "arguments": [
     {
       "name": "componentNameKebab",
@@ -19,16 +19,6 @@
   "installDirectory": "components",
   "files": [
     {
-      "source": "index.ts",
-      "target": "index.ts",
-      "content": [
-        {
-          "matchRegex": "__COMPONENT__KEBAB__",
-          "replace": "${componentNameKebab}"
-        }
-      ]
-    },
-    {
       "source": "component.styles.tsx",
       "target": "${componentNameKebab}.styles.tsx",
       "content": [
@@ -43,8 +33,8 @@
       "target": "${componentNameKebab}.tsx",
       "content": [
         {
-          "matchRegex": "__COMPONENT__",
-          "replace": "${componentNamePascal}"
+          "matchRegex": "__COMPONENT__KEBAB__",
+          "replace": true
         }
       ]
     }
