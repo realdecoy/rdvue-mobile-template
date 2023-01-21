@@ -34,7 +34,7 @@
       "content": [
         {
           "matchRegex": "__COMPONENT__KEBAB__",
-          "replace": true
+          "replace": "${componentNameKebab}"
         }
       ]
     }
