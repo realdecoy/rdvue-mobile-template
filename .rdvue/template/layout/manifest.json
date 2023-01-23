@@ -18,7 +18,7 @@
   ],
   "sourceDirectory": "./",
   "installDirectory": "layouts",
-  "installWithinFolder": false,
+  "installWithinFolder": true,
   "files": [
     {
       "source": "layout.styles.tsx",

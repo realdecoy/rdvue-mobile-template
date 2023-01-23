@@ -4,7 +4,7 @@ enum StatusCode {
   SERVER_ERROR = 500,
 }
 
-class __SERVICE__ {
+class __SERVICE__Service {
   // --------------------------------------------------------------------------
   // [Private] Fields
   // --------------------------------------------------------------------------
@@ -58,6 +58,6 @@ class __SERVICE__ {
 // Module Exports
 // ----------------------------------------------------------------------------
 
-const service = new __SERVICE__();
+const service = new __SERVICE__Service();
 
 export { service as default };
