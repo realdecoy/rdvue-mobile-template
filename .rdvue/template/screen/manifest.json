@@ -30,7 +30,7 @@
       "content": [
         {
           "matchRegex":"__SCREEN__KEBAB__",
-          "target": "${screenNameKebab}.tsx"
+          "replace": "${screenNameKebab}"
         },
         {
           "matchRegex": "__SCREEN__",

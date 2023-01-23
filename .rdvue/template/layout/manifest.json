@@ -31,7 +31,7 @@
       "content": [
         {
           "matchRegex":"__LAYOUT__KEBAB__",
-          "target": "${layoutNameKebab}.tsx"
+          "replace": "${layoutNameKebab}"
         },
         {
           "matchRegex": "__LAYOUT__",

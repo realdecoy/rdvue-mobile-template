@@ -10,7 +10,7 @@ interface State {
   stateValue: string;
 }
 
-class __SCREEN__ extends React.Component<Props, State> {
+class __SCREEN__Screen extends React.Component<Props, State> {
   // --------------------------------------------------------------------------
   // Constructer
   // --------------------------------------------------------------------------
@@ -44,4 +44,4 @@ class __SCREEN__ extends React.Component<Props, State> {
   }
 }
 
-export default __SCREEN__;
+export default __SCREEN__Screen;
