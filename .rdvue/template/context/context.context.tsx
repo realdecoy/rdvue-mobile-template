@@ -3,7 +3,7 @@ import React, { createContext } from "react";
 interface __CONTEXT__ContextState {}
 
 interface with__CONTEXT__Props {
-  __CONTEXT__: __CONTEXT__ContextState;
+  __CONTEXT_CAMEL__: __CONTEXT__ContextState;
 }
 
 interface Props {}
