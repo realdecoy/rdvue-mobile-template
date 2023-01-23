@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-import styles from "./__SCREEN__.styles";
+import styles from "./__SCREEN__KEBAB__.styles";
 
 interface Props {
   value: string;

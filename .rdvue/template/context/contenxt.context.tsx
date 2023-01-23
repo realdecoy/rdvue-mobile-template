@@ -1,17 +1,18 @@
 import React, { createContext } from "react";
-export interface State {}
+
+interface __CONTEXT__ContextState {}
 
 interface with__CONTEXT__Props {
-  __CONTEXT__: State;
+  __CONTEXT__: __CONTEXT__ContextState;
 }
 
 interface Props {}
 
-const __CONTEXT__Context = createContext<State>({});
+const __CONTEXT__Context = createContext<__CONTEXT__ContextState>({});
 
 const __CONTEXT__Consumer = __CONTEXT__Context.Consumer;
 
-class __CONTEXT__ContextProvider extends React.Component<Props, State> {
+class __CONTEXT__ContextProvider extends React.Component<Props, __CONTEXT__ContextState> {
   // --------------------------------------------------------------------------
   // Constructor
   // --------------------------------------------------------------------------
@@ -50,4 +51,5 @@ export {
   __CONTEXT__Consumer,
   with__CONTEXT__,
   with__CONTEXT__Props,
+  __CONTEXT__ContextState,
 };
