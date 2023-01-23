@@ -21,29 +21,18 @@
   "installWithinFolder": false,
   "files": [
     {
-      "source": "index.ts",
-      "target": "index.ts",
-      "content": [
-        {
-          "matchRegex": "__LAYOUT__KEBAB__",
-          "replace": "${layoutNameKebab}"
-        }
-      ]
-    },
-    {
       "source": "layout.styles.tsx",
       "target": "${layoutNameKebab}.styles.tsx",
-      "content": [
-        {
-          "matchRegex": "__LAYOUT__",
-          "replace": "${layoutNameKebab}"
-        }
-      ]
+      "content": []
     },
     {
       "source": "layout.tsx",
       "target": "${layoutNameKebab}.tsx",
       "content": [
+        {
+          "matchRegex":"__LAYOUT__KEBAB__",
+          "target": "${layoutNameKebab}.tsx"
+        },
         {
           "matchRegex": "__LAYOUT__",
           "replace": "${layoutNamePascal}"
