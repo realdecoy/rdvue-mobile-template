@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "name": "sentry",
+  "description": "Generate files/dependencies needed for the sentry error capturing platform.",
+  "sourceDirectory": "./",
+  "installDirectory": "config",
+  "files": [
+    {
+      "source": "sentry.ts",
+      "target": "sentry.ts"
+    }
+  ],
+  "packages": {
+    "dependencies": [
+      "sentry-expo"
+    ]
+  },
+  "moduleImports": [
+    "export * from './sentry';\r\n"
+  ]
+}
