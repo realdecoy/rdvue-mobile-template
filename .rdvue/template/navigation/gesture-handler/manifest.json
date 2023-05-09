@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "name": "react native gesture handler",
+    "description": "Generate files/dependencies needed for the react gesture handler library.",
+    "sourceDirectory": "./",
+    "installDirectory": "config",
+    "files": [
+      {
+        "source": "react-native-gesture-handler.ts",
+        "target": "react-native-gesture-handler.ts"
+      }
+    ],
+    "packages": {
+      "dependencies": [
+        "react-native-gesture-handler"
+      ]
+    },
+    "moduleImports": [
+      "export * from './react-native-gesture-handler';\r\n"
+    ]
+  }

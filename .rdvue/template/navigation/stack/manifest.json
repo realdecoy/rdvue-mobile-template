@@ -1,0 +1,58 @@
+{
+  "version": 2,
+  "name": "stack",
+  "description": "Generate files/dependencies needed for the stack navigation functionality.",
+  "sourceDirectory": "./",
+  "installDirectory": "navigation",
+  "arguments": [
+    {
+      "name": "componentNameKebab",
+      "type": "string",
+      "description": "the name for the generated component. (e.g. my-component)"
+    },
+    {
+      "name": "componentName",
+      "type": "string",
+      "description": "the name for the generated component.",
+      "isPrivate": true
+    }
+  ],
+  "files": [
+    {
+      "source": "stack-navigator.tsx",
+      "target": "${componentNameKebab}-navigation.tsx",
+      "content": [
+        {
+          "matchRegex": "__COMPONENT__KEBAB__",
+          "replace": "${componentNameKebab}"
+        },
+        {
+          "matchRegex": "__COMPONENT__",
+          "replace": "${componentNamePascal}"
+        }
+      ]
+    },
+    {
+      "source": "stack-navigator.type.ts",
+      "target": "/types/${componentNameKebab}-navigation.type.ts",
+      "content": [
+        {
+          "matchRegex": "__COMPONENT__KEBAB__",
+          "replace": "${componentNameKebab}"
+        },
+        {
+          "matchRegex": "__COMPONENT__",
+          "replace": "${componentNamePascal}"
+        }
+      ]
+    }
+  ],
+  "packages": {
+    "dependencies": [
+      "@react-navigation/stack"
+    ]
+  },
+  "moduleImports": [
+    "export * from './${componentNameKebab}';\r\n"
+  ]
+}
