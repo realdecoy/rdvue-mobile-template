@@ -1,5 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import { __COMPONENT__StackParamList } from "@/navigation/types";
+import { __COMPONENT__StackParamList } from "@/navigation/types/__COMPONENT__KEBAB__";
 
 const __COMPONENT__Stack = createStackNavigator<__COMPONENT__ParamList>();
 
