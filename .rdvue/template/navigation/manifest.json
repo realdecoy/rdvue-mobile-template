@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "root navigator",
+  "description": "Generate files/dependencies needed for navigation functionality.",
+  "sourceDirectory": "./",
+  "installDirectory": "navigation",
+  "files": [
+    {
+      "source": "root-navigator.tsx",
+      "target": "root-navigator.tsx"
+    }
+  ]
+}
