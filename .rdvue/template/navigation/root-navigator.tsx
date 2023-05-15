@@ -5,8 +5,7 @@ import {
   SafeAreaProvider,
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
-import { View } from "@/components/themed";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 function RootNavigator() {
   // TODO: Remove
