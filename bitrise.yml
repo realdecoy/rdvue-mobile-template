@@ -14,7 +14,7 @@ workflows:
         inputs:
         - automatic_code_signing: api-key
         - project_path: "$BITRISE_SOURCE_DIR/ios/__PROJECT_SCHEME__.xcworkspace"
-        - scheme: Perkopolis
+        - scheme: __PROJECT_SCHEME__
         - configuration: "$IOS_BUILD_CONFIGURATION"
         - register_test_devices: 'yes'
         - distribution_method: "$IOS_DISTRIBUTION_METHOD"
