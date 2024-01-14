@@ -1,13 +1,13 @@
 import React from "react";
 import * as Localization from 'expo-localization';
-import i18n, { TranslateOptions } from 'i18n-js';
+import{ I18n, TranslateOptions } from 'i18n-js';
 import English from '@/locale/en';
 import French from '@/locale/fr';
 
-i18n.translations = {
+const i18n = new I18n({
   en: English,
   fr: French,
-}
+});
 
 export interface AcceptedLanguages {
   en: 'English';
@@ -23,7 +23,7 @@ export interface LocalizationState {
 }
 
 interface Props {
-  
+  children: React.ReactNode;
 }
 
 export const LocalizationContext = React.createContext({} as LocalizationState);
@@ -62,8 +62,6 @@ export class LocalizationContextProvider extends React.Component<Props, Localiza
 
 
   onCheckLocale = async () => {
-    // When a value is missing from a language it'll fallback to another language with the key present.
-    i18n.fallbacks = true;
     // Default locale will be english
     i18n.defaultLocale = 'en';
 

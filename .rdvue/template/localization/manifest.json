@@ -20,8 +20,8 @@
   ],
   "packages": {
     "dependencies": [
-      "expo-localization",
-      "i18n-js"
+      "expo-localization@14.5.0",
+      "i18n-js@4.3.2"
     ]
   }
 }
