@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "name": "localization",
+  "description": "Generates functionality for localization support.",
+  "sourceDirectory": "./",
+  "installDirectory": "./",
+  "files": [
+    {
+      "source": "locale/en.ts",
+      "target": "locale/en.ts"
+    },
+    {
+      "source": "locale/fr.ts",
+      "target": "locale/fr.ts"
+    },
+    {
+      "source": "context/localization.context.tsx",
+      "target": "context/localization.context.tsx"
+    }
+  ],
+  "packages": {
+    "dependencies": [
+      "expo-localization",
+      "i18n-js"
+    ]
+  }
+}
