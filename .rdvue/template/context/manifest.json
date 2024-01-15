@@ -2,7 +2,8 @@
   "version": 2,
   "name": "context",
   "description": "Generate a basic Context module.",
-  "arguments": [{
+  "arguments": [
+    {
       "name": "storeModuleNameKebab",
       "type": "string",
       "description": "The name in Kebab-case for the generated context module. (e.g. user-data)"
@@ -16,12 +17,20 @@
   ],
   "sourceDirectory": "./",
   "installDirectory": "contexts",
-  "files": [{
-    "source": "catalog.context.tsx",
-    "target": "${storeModuleNameKebab}.context.tsx",
-    "content": [{
-      "matchRegex": "__CONTEXT__",
-      "replace": "${storeModuleName}"
-    }]
-  }]
+  "files": [
+    {
+      "source": "context.context.tsx",
+      "target": "${storeModuleNameKebab}.context.tsx",
+      "content": [
+        {
+          "matchRegex": "__CONTEXT__",
+          "replace": "${storeModuleName}"
+        },
+        {
+          "matchRegex": "__CONTEXT_CAMEL__",
+          "replace": "${storeModuleNameCamel}"
+        }
+      ]
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "component",
-  "description": "Generate a basic component.",
+  "description": "Generate a basic function based component.",
   "arguments": [
     {
       "name": "componentNameKebab",
@@ -19,29 +19,18 @@
   "installDirectory": "components",
   "files": [
     {
-      "source": "index.ts",
-      "target": "index.ts",
-      "content": [
-        {
-          "matchRegex": "__COMPONENT__KEBAB__",
-          "replace": "${componentNameKebab}"
-        }
-      ]
-    },
-    {
       "source": "component.styles.tsx",
       "target": "${componentNameKebab}.styles.tsx",
-      "content": [
-        {
-          "matchRegex": "__COMPONENT__",
-          "replace": "${componentNameKebab}"
-        }
-      ]
+      "content": []
     },
     {
       "source": "component.tsx",
       "target": "${componentNameKebab}.tsx",
       "content": [
+        {
+          "matchRegex": "__COMPONENT__KEBAB__",
+          "replace": "${componentNameKebab}"
+        },
         {
           "matchRegex": "__COMPONENT__",
           "replace": "${componentNamePascal}"

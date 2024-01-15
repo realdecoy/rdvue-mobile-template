@@ -20,29 +20,18 @@
   "installDirectory": "screens",
   "files": [
     {
-      "source": "index.ts",
-      "target": "index.ts",
-      "content": [
-        {
-          "matchRegex": "__SCREEN__KEBAB__",
-          "replace": "${screenNameKebab}"
-        }
-      ]
-    },
-    {
       "source": "screen.styles.tsx",
       "target": "${screenNameKebab}.styles.tsx",
-      "content": [
-        {
-          "matchRegex": "__SCREEN__",
-          "replace": "${screenNameKebab}"
-        }
-      ]
+      "content": []
     },
     {
       "source": "screen.tsx",
       "target": "${screenNameKebab}.tsx",
       "content": [
+        {
+          "matchRegex":"__SCREEN__KEBAB__",
+          "replace": "${screenNameKebab}"
+        },
         {
           "matchRegex": "__SCREEN__",
           "replace": "${screenNamePascal}"

@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-import styles from "./__LAYOUT__.styles";
+import styles from "./__LAYOUT__KEBAB__.styles";
 
 interface Props {
   value: string;
@@ -10,7 +10,7 @@ interface State {
   stateValue: string;
 }
 
-class __LAYOUT__ extends React.Component<Props, State> {
+class __LAYOUT__Layout extends React.Component<Props, State> {
   // --------------------------------------------------------------------------
   // Constructer
   // --------------------------------------------------------------------------
@@ -44,4 +44,4 @@ class __LAYOUT__ extends React.Component<Props, State> {
   }
 }
 
-export default __LAYOUT__;
+export default __LAYOUT__Layout;
