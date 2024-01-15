@@ -67,6 +67,8 @@ export class LocalizationContextProvider extends React.Component<Props, Localiza
 
     // Fetch locals from either API/local storage/persisted source
     // Eg: const appLocale = await AsyncStorage.getItem('appLocale');
+    // Eg: using device's installed locales
+    // const appLocale = await Localization.getLocales().filter(locale => i18n.translations.hasOwnProperty(locale.languageCode))[0] ?? 'en';
     const appLocale = 'en';
 
     // Set the locale once at the beginning of your app.
