@@ -48,6 +48,16 @@
           "replace": "${screenNamePascal}"
         }
       ]
+    },
+    {
+      "source": "_layout.tsx",
+      "target": "_layout.tsx",
+      "content": [
+        {
+          "matchRegex": "__SCREEN__",
+          "replace": "${screenNameKebab}"
+        }
+      ]
     }
   ]
 }
