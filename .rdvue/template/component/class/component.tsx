@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
 import { View, Text } from "react-native";
-import styles from "./__COMPONENT__.styles";
+import styles from "./__COMPONENT__KEBAB__.styles";
 
 interface Props {
   value: string;
@@ -10,7 +10,7 @@ interface State {
   stateValue: string;
 }
 
-class __COMPONENT__ extends React.Component<Props, State> {
+class __COMPONENT__ extends Component<Props, State> {
   // --------------------------------------------------------------------------
   // Constructer
   // --------------------------------------------------------------------------
@@ -37,11 +37,11 @@ class __COMPONENT__ extends React.Component<Props, State> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.heading}>__COMPONENT__ Componenet</Text>
+        <Text style={styles.heading}>__COMPONENT__ Component</Text>
         <Text>Value is {this.props.value}</Text>
       </View>
     );
   }
 }
 
-export default __COMPONENT__;
+export { __COMPONENT__ };

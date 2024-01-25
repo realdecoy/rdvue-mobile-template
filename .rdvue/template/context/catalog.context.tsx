@@ -1,4 +1,5 @@
 import React, { createContext } from "react";
+
 export interface State {}
 
 interface with__CONTEXT__Props {
@@ -7,7 +8,7 @@ interface with__CONTEXT__Props {
 
 interface Props {}
 
-const __CONTEXT__Context = createContext<State>({});
+const __CONTEXT__Context = createContext({} as State);
 
 const __CONTEXT__Consumer = __CONTEXT__Context.Consumer;
 

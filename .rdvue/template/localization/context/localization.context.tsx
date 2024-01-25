@@ -1,8 +1,8 @@
 import React from "react";
 import * as Localization from 'expo-localization';
 import{ I18n, TranslateOptions } from 'i18n-js';
-import English from '@/locale/en';
-import French from '@/locale/fr';
+import English from '../locale/en';
+import French from '../locale/fr';
 
 const i18n = new I18n({
   en: English,
@@ -17,9 +17,40 @@ export interface AcceptedLanguages {
 export interface LocalizationState {
   localizationLoading: boolean;
   currentLocale: string;
+
+  /**
+   * @description This method will check the locale of the device and set the locale of the app
+   * @returns {Promise<void>}
+   * @memberof LocalizationState
+   */
   checkLocale: () => void;
+
+  /**
+   * @description This method will set the locale of the app
+   * @param {keyof AcceptedLanguages} val
+   * @returns {Promise<void>}
+   * @memberof LocalizationState
+   * @example
+   * localization.setLanguage('en');
+   * localization.setLanguage('fr');
+   */
   setLanguage: (val: keyof AcceptedLanguages) => Promise<void>;
+
+  /**
+   * @description This method will return the translation of the key passed
+   * @param {keyof (typeof English)} val
+   * @param {TranslateOptions} [options]
+   * @returns {string}
+   * @memberof LocalizationState
+   * @example
+   * localization.getTranslation('welcome');
+   * localization.getTranslation('welcome', { name: 'John' });
+   */
   getTranslation: (val: keyof (typeof English), options?: TranslateOptions) => string;
+}
+
+export interface withLocalizationProps {
+  LocalizationContext: LocalizationState;
 }
 
 interface Props {
@@ -68,9 +99,10 @@ export class LocalizationContextProvider extends React.Component<Props, Localiza
     // Fetch locals from either API/local storage/persisted source
     // Eg: const appLocale = await AsyncStorage.getItem('appLocale');
     // Eg: using device's installed locales
-    // const appLocale = await Localization.getLocales().filter(locale => i18n.translations.hasOwnProperty(locale.languageCode))[0] ?? 'en';
+    // const appLocale = await Localization.getLocales()
+    //   .filter(locale => locale && i18n.translations.hasOwnProperty(locale.languageCode))[0].languageCode ?? 'en';
     const appLocale = 'en';
-
+    
     // Set the locale once at the beginning of your app.
     i18n.locale = appLocale ? appLocale : Localization.locale;
     this.setState({ currentLocale: appLocale ? appLocale : Localization.locale });
@@ -79,8 +111,8 @@ export class LocalizationContextProvider extends React.Component<Props, Localiza
   // --------------------------------------------------------------------------
   // Lifecycle Methods
   // --------------------------------------------------------------------------
-  componentDidMount() {
-    //
+  async componentDidMount() {
+    await this.onCheckLocale()
   }
 
   render() {
@@ -96,7 +128,7 @@ export const LocalizationConsumer = LocalizationContext.Consumer;
 
 export const withLocalization = (Component: any) => (props: any) => (
     <LocalizationConsumer>
-      {state => <Component {...props} localization={state} />}
+      {state => <Component {...props} LocalizationContext={state} />}
     </LocalizationConsumer>
 );
 
