@@ -20,16 +20,6 @@
   "installDirectory": "screens",
   "files": [
     {
-      "source": "index.ts",
-      "target": "index.ts",
-      "content": [
-        {
-          "matchRegex": "__SCREEN__KEBAB__",
-          "replace": "${screenNameKebab}"
-        }
-      ]
-    },
-    {
       "source": "screen.styles.tsx",
       "target": "${screenNameKebab}.styles.tsx",
       "content": [
